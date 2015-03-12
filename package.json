@@ -1,0 +1,32 @@
+{
+  "name": "photoshop-emailerizr",
+  "version": "1.0.0",
+  "description": "Takes HTML and images exported from Photoshop and makes them actually usable as HTML emails.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+
+    "html:exists": "count=$(ls -1 *.html 2>/dev/null | wc -l);if [ $count != 0 ];then echo 1;else echo 0;fi;",
+    "html:select": "if [ $(npm run -s html:exists) = 1 ];then PS3=\"Select a file to emailerize: \";select HTML in *.html;do echo $HTML;break;done;fi",
+    "html:addStyle": "open",
+
+    "build": "npm run -s html:select | xargs npm run html:addStyle --",
+
+    "build:campaignmonitor": "",
+    "build:dotmailer": ""
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simonausten/photoshop-emailerizr.git"
+  },
+  "author": "Simon Austen (scausten@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simonausten/photoshop-emailerizr/issues"
+  },
+  "homepage": "https://github.com/simonausten/photoshop-emailerizr",
+  "dependencies": {
+    "inliner": "git+https://github.com/remy/inliner.git"
+  }
+}
