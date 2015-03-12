@@ -20,12 +20,6 @@ h1, h2, h3, h4, h5, h6 {
 /* This CSS will overwrite Outlook.com/Outlook.com's default CSS and make your headings appear consistent with Gmail.  
                            From there, you can overwrite your styles inline if needed.  */
 
-#bodyTable {
-    height: 100% !important;
-    margin: 0;
-    padding: 0;
-    width: 100% !important;
-}
 p {
     margin: 0;
     padding: 0;
